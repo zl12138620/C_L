@@ -8,51 +8,37 @@ void bubbleSort(char arr[], int n);
 int main(){
     char a[10] = {1, 3, 4, 11, 5, 6, 7, 8, 9, 10};
     int Length = 10;
-    seletsort(a, Length);
-    // bubbleSort(a, Length);
+    bubbleSort(a,Length);
 
     return 0;
 }
 
 
-void bubbleSort(char a[], int Length){
+void seletsort(char a[], int Length){
     int i, j, temp;
     for(i=0; i<Length; i++){
         temp = a[i];
-        for(j=0; j<Length; j++)
-        {
-            if(a[j] > temp){
+        for(j=0; j<Length; j++){
+
+        }
+    }
+}
+
+void bubbleSort(char a[], int Length){
+    int i, j, temp;
+    for(i=0; i<Length-1; i++){
+        for(j=0; j<Length-i-1; j++){
+            if(a[j+1] < a[j]){
                 temp = a[j];
-                a[j] = a[i];
-                a[i] = temp;
-            }
-            else if(a[j] == temp){
-                continue; 
-            }
-            else{
-                continue;
+                a[j] = a[j+1];
+                a[j+1] = temp;
             }
         }
     }
     for(i=0; i<Length; i++){
-        printf("%d ", a[i]);
+        printf("%d ",a[i]);
     }
 }
 
 
-void seletsort(char a[], int Length){
-    int i, j, temp_min;
-    for(i=0; i<Length; i++){
-        temp_min = a[i];
-        for(j=i+1; j<Length; j++){
-            if(a[j] < temp_min){
-                temp_min = a[j];//find the min_number
-                a[j] = a[i];
-                a[i] = temp_min;
-            }
-        }
-    }
-    for(i=0; i<Length; i++){
-        printf("%d",a[i]);
-    }
-}
+
